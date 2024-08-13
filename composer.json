@@ -1,0 +1,23 @@
+{
+    "name": "lfluvisotto/razoyo-carprofile",
+    "description": "Razoyo Car Profile",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "magento/module-customer": "*"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magento\\Cms\\": ""
+        }
+    }
+}
