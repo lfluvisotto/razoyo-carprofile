@@ -23,7 +23,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": {
-        "lfluvisotto": {
+        "lfluvisotto/razoyo-carprofile-swagger-client": {
             "type": "vcs",
             "url": "https://github.com/lfluvisotto/razoyo-carprofile-swagger-client"
         }
