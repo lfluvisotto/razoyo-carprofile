@@ -4,7 +4,7 @@
     <update handle="customer_account"/>
     <body>
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" template="Razoyo_CarProfile::index.phtml"
+            <block class="Magento\Framework\View\Element\Template" template="Razoyo_CarProfile::edit.phtml"
                    name="razoyo_carprofile" cacheable="false">
                 <arguments>
                     <argument name="car_profile"

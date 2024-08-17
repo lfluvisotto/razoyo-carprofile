@@ -1,0 +1,44 @@
+<?php
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Razoyo\CarProfile\ViewModel\CarProfile;
+
+/**
+ * @var Template $block
+ * @var Escaper $escaper
+ * @var CarProfile $carProfile
+ */
+$carProfile = $block->getCarProfile();
+
+$cars = $carProfile->getCars();
+?>
+<table>
+    <thead>
+    <tr>
+        <th><?= $escaper->escapeHtml(__('ID')) ?></th>
+        <th><?= $escaper->escapeHtml(__('Year')) ?></th>
+        <th><?= $escaper->escapeHtml(__('Make')) ?></th>
+        <th><?= $escaper->escapeHtml(__('Model')) ?></th>
+        <th><?= $escaper->escapeHtml(__('Action')) ?></th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($cars as $car): ?>
+        <tr>
+            <td><?= $escaper->escapeHtml($car->getId()) ?></td>
+            <td><?= $escaper->escapeHtml($car->getYear()) ?></td>
+            <td><?= $escaper->escapeHtml($car->getMake()) ?></td>
+            <td><?= $escaper->escapeHtml($car->getModel()) ?></td>
+            <td>
+                <div class="primary">
+                    <a class="action primary" href="<?= $escaper->escapeUrl($carProfile->getSaveUrl($car->getId())) ?>">
+                        <span><?= $escaper->escapeHtml(__('Select')) ?></span>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

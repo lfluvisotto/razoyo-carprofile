@@ -8,10 +8,8 @@ use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\Controller\Result\RedirectFactory as ResultRedirectFactory;
 use Magento\Framework\View\Result\PageFactory as ResultPageFactory;
 
-class Index implements HttpGetActionInterface
+class Edit implements HttpGetActionInterface
 {
-    public const PATH = 'car/profile/index';
-
     public function __construct(
         private readonly CustomerSession $customerSession,
         private readonly ResultRedirectFactory $resultRedirectFactory,
@@ -27,6 +25,12 @@ class Index implements HttpGetActionInterface
 
         $resultPage = $this->resultPageFactory->create();
         $resultPage->getConfig()->getTitle()->set(__('My Car Profile'));
+
+        $customerAccountNavigation = $resultPage->getLayout()->getBlock('customer_account_navigation');
+
+        if ($customerAccountNavigation) {
+            $customerAccountNavigation->setActive(Index::PATH);
+        }
 
         return $resultPage;
     }

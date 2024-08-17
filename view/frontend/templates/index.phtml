@@ -1,0 +1,67 @@
+<?php
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Razoyo\CarProfile\ViewModel\CarProfile;
+
+/**
+ * @var Template $block
+ * @var Escaper $escaper
+ * @var CarProfile $carProfile
+ */
+$carProfile = $block->getCarProfile();
+
+$hasCarProfile = $carProfile->getId() && $carProfile->getCar()->getId();
+
+$buttonText = $hasCarProfile ? __('Edit') : __('Add');
+?>
+<?php if ($hasCarProfile): ?>
+    <?php $car = $carProfile->getCar() ?>
+    <div>
+        <div>
+            <img src="<?= $escaper->escapeUrl($car->getImage()) ?>"
+                 alt="<?= $escaper->escapeHtmlAttr($car->getId()) ?>">
+        </div>
+        <div>
+            <span><?= $escaper->escapeHtml(__('ID')) ?>:&nbsp;</span>
+            <span><?= $escaper->escapeHtml($car->getId()) ?></span>
+        </div>
+        <div>
+            <span><?= $escaper->escapeHtml(__('Year')) ?>:&nbsp;</span>
+            <span><?= $escaper->escapeHtml($car->getYear()) ?></span>
+        </div>
+        <div>
+            <span><?= $escaper->escapeHtml(__('Make')) ?>:&nbsp;</span>
+            <span><?= $escaper->escapeHtml($car->getMake()) ?></span>
+        </div>
+        <div>
+            <span><?= $escaper->escapeHtml(__('Model')) ?>:&nbsp;</span>
+            <span><?= $escaper->escapeHtml($car->getModel()) ?></span>
+        </div>
+        <div>
+            <span><?= $escaper->escapeHtml(__('Price')) ?>:&nbsp;</span>
+            <span><?= $escaper->escapeHtml($carProfile->formatPrice($car->getPrice())) ?></span>
+        </div>
+        <div>
+            <span><?= $escaper->escapeHtml(__('Seats')) ?>:&nbsp;</span>
+            <span><?= $escaper->escapeHtml($car->getSeats()) ?></span>
+        </div>
+        <div>
+            <span><?= $escaper->escapeHtml(__('MPG')) ?>:&nbsp;</span>
+            <span><?= $escaper->escapeHtml($car->getMpg()) ?></span>
+        </div>
+    </div>
+<?php else: ?>
+    <div class="message info empty">
+        <span><?= $escaper->escapeHtml(__("You have no car profile yet.")) ?></span>
+    </div>
+<?php endif; ?>
+<br>
+<div class="actions-toolbar">
+    <div class="primary">
+        <a class="action primary" href="<?= $escaper->escapeUrl($carProfile->getEditUrl()) ?>">
+            <span><?= $escaper->escapeHtml($buttonText) ?></span>
+        </a>
+    </div>
+</div>

@@ -10,7 +10,7 @@ class Car extends DataObject implements CarInterface
 {
     public function getId(): string
     {
-        return $this->getData(self::ID);
+        return (string)$this->getData(self::ID);
     }
 
     public function setId(string $id): CarInterface
@@ -20,7 +20,7 @@ class Car extends DataObject implements CarInterface
 
     public function getYear(): int
     {
-        return $this->getData(self::YEAR);
+        return (int)$this->getData(self::YEAR);
     }
 
     public function setYear(int $year): CarInterface
@@ -30,7 +30,7 @@ class Car extends DataObject implements CarInterface
 
     public function getMake(): string
     {
-        return $this->getData(self::MAKE);
+        return (string)$this->getData(self::MAKE);
     }
 
     public function setMake(string $make): CarInterface
@@ -40,7 +40,7 @@ class Car extends DataObject implements CarInterface
 
     public function getModel(): string
     {
-        return $this->getData(self::MODEL);
+        return (string)$this->getData(self::MODEL);
     }
 
     public function setModel(string $model): CarInterface
@@ -50,7 +50,7 @@ class Car extends DataObject implements CarInterface
 
     public function getPrice(): float
     {
-        return $this->getData(self::PRICE);
+        return (float)$this->getData(self::PRICE);
     }
 
     public function setPrice(float $price): CarInterface
@@ -60,7 +60,7 @@ class Car extends DataObject implements CarInterface
 
     public function getSeats(): int
     {
-        return $this->getData(self::SEATS);
+        return (int)$this->getData(self::SEATS);
     }
 
     public function setSeats(int $seats): CarInterface
@@ -70,7 +70,7 @@ class Car extends DataObject implements CarInterface
 
     public function getMpg(): int
     {
-        return $this->getData(self::MPG);
+        return (int)$this->getData(self::MPG);
     }
 
     public function setMpg(int $mpg): CarInterface
@@ -80,7 +80,7 @@ class Car extends DataObject implements CarInterface
 
     public function getImage(): string
     {
-        return $this->getData(self::IMAGE);
+        return (string)$this->getData(self::IMAGE);
     }
 
     public function setImage(string $image): CarInterface

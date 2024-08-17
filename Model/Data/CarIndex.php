@@ -9,7 +9,7 @@ class CarIndex extends DataObject implements CarIndexInterface
 {
     public function getId(): string
     {
-        return $this->getData(self::ID);
+        return (string)$this->getData(self::ID);
     }
 
     public function setId(string $id): CarIndexInterface
@@ -19,7 +19,7 @@ class CarIndex extends DataObject implements CarIndexInterface
 
     public function getYear(): int
     {
-        return $this->getData(self::YEAR);
+        return (int)$this->getData(self::YEAR);
     }
 
     public function setYear(int $year): CarIndexInterface
@@ -29,7 +29,7 @@ class CarIndex extends DataObject implements CarIndexInterface
 
     public function getMake(): string
     {
-        return $this->getData(self::MAKE);
+        return (string)$this->getData(self::MAKE);
     }
 
     public function setMake(string $make): CarIndexInterface
@@ -39,7 +39,7 @@ class CarIndex extends DataObject implements CarIndexInterface
 
     public function getModel(): string
     {
-        return $this->getData(self::MODEL);
+        return (string)$this->getData(self::MODEL);
     }
 
     public function setModel(string $model): CarIndexInterface
