@@ -24,7 +24,7 @@ class CarProfile implements ArgumentInterface
 
     public function getId(): string
     {
-        return $this->customerSession->getCustomerData()
+        return (string)$this->customerSession->getCustomerData()
             ->getCustomAttribute(AddCustomerAttributeCarProfileId::CAR_PROFILE_ID)?->getValue();
     }
 

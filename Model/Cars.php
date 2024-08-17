@@ -58,16 +58,18 @@ class Cars implements CarsInterface
     {
         $car = $this->carInterfaceFactory->create();
 
-        $this->getCars();
+        if ($id) {
+            $this->getCars();
 
-        $this->getApiCars(true);
+            $this->getApiCars(true);
 
-        $this->client->get(sprintf('%s/%s/%s', $this->getServer(), self::ENDPOINT_CARS, $id));
+            $this->client->get(sprintf('%s/%s/%s', $this->getServer(), self::ENDPOINT_CARS, $id));
 
-        if ($this->client->getStatus() === self::HTTP_STATUS_OK) {
-            $carData = $this->unserialize($this->client->getBody(), self::BODY_CAR);
+            if ($this->client->getStatus() === self::HTTP_STATUS_OK) {
+                $carData = $this->unserialize($this->client->getBody(), self::BODY_CAR);
 
-            $car->setData($carData);
+                $car->setData($carData);
+            }
         }
 
         return $car;
