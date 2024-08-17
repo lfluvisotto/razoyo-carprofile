@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="customer">
+            <group id="razoyo_carprofile" type="text" translate="label" sortOrder="999" canRestore="1"
+                   showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Razoyo Car Profile</label>
+                <field id="server" type="text" translate="label" canRestore="1"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Server</label>
+                    <validate>required-entry validate-url</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

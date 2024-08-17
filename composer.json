@@ -5,7 +5,6 @@
         "sort-packages": true
     },
     "require": {
-        "lfluvisotto/razoyo-carprofile-swagger-client": "dev-main",
         "magento/module-customer": "*"
     },
     "require-dev": {
@@ -21,11 +20,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": {
-        "lfluvisotto/razoyo-carprofile-swagger-client": {
-            "type": "vcs",
-            "url": "https://github.com/lfluvisotto/razoyo-carprofile-swagger-client"
-        }
-    }
+    "prefer-stable": true
 }
