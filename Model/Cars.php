@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 
-
 namespace Razoyo\CarProfile\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
@@ -21,7 +20,7 @@ class Cars implements CarsInterface
     private const HEADER_YOUR_TOKEN = 'your-token';
     private const BODY_CAR = 'car';
     private const BODY_CARS = 'cars';
-    const HTTP_STATUS_OK = 200;
+    private const HTTP_STATUS_OK = 200;
 
     public function __construct(
         private readonly ScopeConfigInterface $scopeConfig,
@@ -86,7 +85,8 @@ class Cars implements CarsInterface
 
         if ($setHeaderYourToken) {
             $this->client->setHeaders([
-                self::HEADER_AUTHORIZATION => sprintf(self::HEADER_BEARER, $this->client->getHeaders()[self::HEADER_YOUR_TOKEN])
+                self::HEADER_AUTHORIZATION =>
+                    sprintf(self::HEADER_BEARER, $this->client->getHeaders()[self::HEADER_YOUR_TOKEN])
             ]);
         }
     }

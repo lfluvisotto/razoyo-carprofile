@@ -56,7 +56,7 @@ class AddCustomerAttributeCarProfileId implements DataPatchInterface
             $connection->getTableName(self::TABLE_CUSTOMER_FORM_ATTRIBUTE),
             [
                 'form_code' => 'adminhtml_customer',
-                'attribute_id' => $customerSetup->getAttributeId('customer',self::CAR_PROFILE_ID)
+                'attribute_id' => $customerSetup->getAttributeId('customer', self::CAR_PROFILE_ID)
             ]
         );
 
